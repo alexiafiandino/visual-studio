@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Dolce Vita - Mentalité</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-serviette">
+
+    <!-- Overlay de la vague pour la transition de retour (de gauche à droite) -->
+    <div id="wave-overlay" class="wave-container">
+        <svg class="wave-svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+                <use href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use href="#gentle-wave" x="48" y="7" fill="#fef08a" />
+            </g>
+        </svg>
+    </div>
+
+    <!-- Carte centrale style serviette -->
+    <main class="card card-serviette">
+        <div class="decorations">
+            <span class="emoji lemon">☀️</span>
+            <span class="emoji olive">🍋</span>
+            <span class="emoji parasol">🏖️</span>
+        </div>
+
+        <h1 class="quote-title text-italic">
+            « Ce n'est pas un style de vie mais une mentalité »
+        </h1>
+
+        <h2 class="quote-subtitle text-italic">
+            L'art de vivre au quotidien
+        </h2>
+
+        <a href="index.html" id="transition-link" class="btn btn-yellow">Retourner à la plage 🌊</a>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

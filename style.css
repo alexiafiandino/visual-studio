@@ -1,0 +1,182 @@
+/* --- Réinitialisation de base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Style Global & Page 1 (Rayures Bleu Pastel) --- */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    background: repeating-linear-gradient(
+        90deg,
+        #b8e0d2 0px,
+        #b8e0d2 60px,
+        #ffffff 60px,
+        #ffffff 120px
+    );
+    overflow: hidden;
+    position: relative;
+}
+
+/* Carte centrale pour la première page */
+.card {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 45px 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Éléments décoratifs (citrons, olives, parasol) */
+.decorations {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.emoji {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.emoji:hover {
+    transform: scale(1.3) rotate(10deg);
+}
+
+/* Titres de la première page */
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3.5rem;
+    font-weight: normal;
+    color: #2b2b2b;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Bouton principal */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #2a9d8f;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: Arial, sans-serif;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218377;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(42, 157, 143, 0.4);
+}
+
+/* --- Style Page 2 (Rayures Jaune Pastel & Texture Serviette) --- */
+body.page-serviette {
+    background-color: #fffdf5;
+    background-image: 
+        radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        repeating-linear-gradient(
+            90deg,
+            #fef08a 0px,
+            #fef08a 60px,
+            #ffffff 60px,
+            #ffffff 120px
+        );
+    background-size: 8px 8px, 100% 100%;
+}
+
+.card-serviette {
+    border: 2px dashed #facc15;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 12px 35px rgba(234, 179, 8, 0.15);
+}
+
+.text-italic {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.quote-title {
+    font-size: 2.4rem;
+    color: #334155;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.quote-subtitle {
+    font-size: 1.5rem;
+    color: #854d0e;
+    margin-bottom: 30px;
+}
+
+.btn-yellow {
+    background-color: #eab308;
+    color: white;
+    box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+}
+
+.btn-yellow:hover {
+    background-color: #ca8a04;
+    box-shadow: 0 6px 16px rgba(234, 179, 8, 0.4);
+}
+
+/* --- Animation de la Vague (de Gauche vers la Droite) --- */
+.wave-container {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    pointer-events: none;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+}
+
+.wave-container.active {
+    transform: translateX(100%);
+}
+
+.wave-svg {
+    width: 100vw;
+    height: 100vh;
+    transform: rotate(-90deg) scale(2);
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+.parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+.parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+.parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+
+@keyframes move-forever {
+    0% { transform: translate3d(-90px,0,0); }
+    100% { transform: translate3d(85px,0,0); }
+}
